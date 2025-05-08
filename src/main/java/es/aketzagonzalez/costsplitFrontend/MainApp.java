@@ -1,14 +1,13 @@
 package es.aketzagonzalez.costsplitFrontend;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 import es.aketzagonzalez.utilidad.Navegador;
+import io.github.costsplit.api.DefaultApi;
+import io.github.costsplit.api.invoker.ApiClient;
 
 /**
  * Clase principal.
@@ -17,6 +16,7 @@ public class MainApp extends Application {
     
     /** The stage. */
     private static Stage stage;
+    private static DefaultApi api;
 
     /**
      * Start.
@@ -31,6 +31,13 @@ public class MainApp extends Application {
         stage.setResizable(false);
         Navegador.cargarVista("IniciarSesion", null);
         stage.show();
+        try {
+	        api = new DefaultApi(new ApiClient()
+	        	    .setHost("localhost")
+	        	    .setPort(8080));
+        }catch(Exception e) {
+        	e.printStackTrace();
+        }
     }
 
     /**
@@ -49,6 +56,15 @@ public class MainApp extends Application {
      */
     public static Stage getStage() {
 		return stage;
+	}
+    
+    /**
+     * Gets the api
+     * 
+     * @return the api
+     */
+    public static DefaultApi getApi() {
+		return api;
 	}
 
 }
