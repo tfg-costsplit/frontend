@@ -1,9 +1,11 @@
 package es.aketzagonzalez.ctrl;
 
+import es.aketzagonzalez.utilidad.Navegador;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ListView;
-import javafx.scene.control.MenuItem;
 
 /**
  * The Class PestaniaPrincipalController.
@@ -14,9 +16,25 @@ public class PestaniaPrincipalController {
     @FXML
     private ListView<?> lstGastos;
 
-    /** The men acerca de. */
+    /**
+     * Aniadir compra.
+     *
+     * @param event the event
+     */
     @FXML
-    private MenuItem menAcercaDe;
+    void aniadirCompra(ActionEvent event) {
+
+    }
+
+    /**
+     * Crear grupo.
+     *
+     * @param event the event
+     */
+    @FXML
+    void crearGrupo(ActionEvent event) {
+    	Navegador.cargarVista("CrearGrupo", null);
+    }
 
     /**
      * Ver credenciales.
@@ -25,7 +43,10 @@ public class PestaniaPrincipalController {
      */
     @FXML
     void verCredenciales(ActionEvent event) {
-
+    	Alert al=new Alert(AlertType.INFORMATION);
+    	al.setHeaderText("Desarrolladores:");
+    	al.setContentText("Aketza González\nAimar Ibarra");
+    	al.showAndWait();
     }
 
 }

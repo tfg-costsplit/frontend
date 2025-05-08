@@ -4,6 +4,7 @@ module es.aketzagonzalez {
     requires javafx.media;
     requires api;
 	requires java.net.http;
+	requires javafx.graphics;
     opens es.aketzagonzalez.ctrl to javafx.fxml;
     exports es.aketzagonzalez.costsplitFrontend;
     exports es.aketzagonzalez.model;
