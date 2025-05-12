@@ -2,7 +2,9 @@ package es.aketzagonzalez.ctrl;
 
 import es.aketzagonzalez.costsplitFrontend.MainApp;
 import es.aketzagonzalez.utilidad.Navegador;
+import io.github.costsplit.api.DefaultApi;
 import io.github.costsplit.api.model.Login;
+import io.github.costsplit.api.model.UserData;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -27,9 +29,11 @@ public class IniciarSesionController {
     @FXML
     private Button btnRegistrarse;
     
+    /** The txt contrasenia. */
     @FXML
     private TextField txtContrasenia;
 
+    /** The txt email. */
     @FXML
     private TextField txtEmail;
 
@@ -66,8 +70,11 @@ public class IniciarSesionController {
     		login.setEmail(email);
     		login.setPassword(contrasenia);
     		try {
-	    		MainApp.getApi().loginUser(login);
+	    		UserData token=MainApp.getApi().loginUser(login);
+	    		MainApp.getApiClient().setRequestInterceptor(request -> request.header("Authorization", "Bearer " + token.getToken()));
+	    		MainApp.setApi(new DefaultApi(MainApp.getApiClient()));
 	    		Navegador.cargarVista("PestaniaPrincipal", null);
+	    		MainApp.getStage().setTitle(token.getName());
     		}catch(Exception e) {
     			error="Usuario o contraseña inválido";
     			al.setContentText(error);

@@ -77,11 +77,13 @@ public class RegistrarseController {
     		cu.setPassword(contrasenia);
     		try {
 				MainApp.getApi().createUser(cu);
-				Navegador.cargarVista("PestaniaPrincipal", null);
+				al.setContentText("Usuario creado correctamente");
+				al.showAndWait();
+				Navegador.cargarVista("IniciarSesion", null);
 			} catch (ApiException e) {
 				al.setContentText("Error al registrar al usuario");
 				al.showAndWait();
-				e.printStackTrace();
+				//e.printStackTrace();
 			}
     	}else {
     		al.setContentText(error);
@@ -89,6 +91,13 @@ public class RegistrarseController {
     	}
     }
 
+	/**
+	 * Validar contrasenia.
+	 *
+	 * @param contrasenia the contrasenia
+	 * @param error the error
+	 * @return the string
+	 */
 	private String validarContrasenia(String contrasenia, String error) {
 		contrasenia=contrasenia.trim();
 		if(contrasenia.length()<8) {
