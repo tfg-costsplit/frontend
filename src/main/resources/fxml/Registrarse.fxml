@@ -45,8 +45,8 @@
       </GridPane>
       <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="50.0">
          <children>
-            <Button fx:id="btnRegistrarse" mnemonicParsing="false" onAction="#accionRegistrarse" text="Registrarse" />
-            <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#accionCancelar" text="Cancelar" />
+            <Button fx:id="btnRegistrarse" defaultButton="true" mnemonicParsing="false" onAction="#accionRegistrarse" text="Registrarse" />
+            <Button fx:id="btnCancelar" cancelButton="true" mnemonicParsing="false" onAction="#accionCancelar" text="Cancelar" />
          </children>
       </HBox>
    </children>

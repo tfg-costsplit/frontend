@@ -21,6 +21,7 @@
           <Menu mnemonicParsing="false" text="Grupo">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#crearGrupo" text="Crear grupo" />
+                  <MenuItem mnemonicParsing="false" onAction="#unirseAGrupo" text="Unirse a grupo" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Ayuda">

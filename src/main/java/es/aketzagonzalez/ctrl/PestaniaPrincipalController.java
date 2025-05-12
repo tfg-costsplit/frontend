@@ -35,6 +35,16 @@ public class PestaniaPrincipalController {
     void crearGrupo(ActionEvent event) {
     	Navegador.cargarVista("CrearGrupo", null);
     }
+    
+    /**
+     * Unirse A grupo.
+     *
+     * @param event the event
+     */
+    @FXML
+    void unirseAGrupo(ActionEvent event) {
+    	Navegador.cargarVista("UnirseAGrupo", null);
+    }
 
     /**
      * Ver credenciales.
@@ -45,7 +55,7 @@ public class PestaniaPrincipalController {
     void verCredenciales(ActionEvent event) {
     	Alert al=new Alert(AlertType.INFORMATION);
     	al.setHeaderText("Desarrolladores:");
-    	al.setContentText("Aketza González\nAimar Ibarra");
+    	al.setContentText("Aimar Ibarra\nAketza González");
     	al.showAndWait();
     }
 

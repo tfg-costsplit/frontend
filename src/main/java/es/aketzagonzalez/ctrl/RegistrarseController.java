@@ -78,12 +78,12 @@ public class RegistrarseController {
     		try {
 				MainApp.getApi().createUser(cu);
 				al.setContentText("Usuario creado correctamente");
+				al.setAlertType(AlertType.INFORMATION);
 				al.showAndWait();
 				Navegador.cargarVista("IniciarSesion", null);
 			} catch (ApiException e) {
 				al.setContentText("Error al registrar al usuario");
 				al.showAndWait();
-				//e.printStackTrace();
 			}
     	}else {
     		al.setContentText(error);

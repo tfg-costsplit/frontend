@@ -21,8 +21,8 @@
       </HBox>
       <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="50.0">
          <children>
-            <Button fx:id="btnGuardar" mnemonicParsing="false" onAction="#accionGuardar" text="Guardar" />
-            <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#accionCancelar" text="Cancelar" />
+            <Button fx:id="btnGuardar" defaultButton="true" mnemonicParsing="false" onAction="#accionGuardar" text="Guardar" />
+            <Button fx:id="btnCancelar" cancelButton="true" mnemonicParsing="false" onAction="#accionCancelar" text="Cancelar" />
          </children>
       </HBox>
    </children>

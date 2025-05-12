@@ -48,12 +48,13 @@ public class CrearGrupoController {
     	String error="";
     	Alert al=new Alert(AlertType.ERROR);
     	al.setHeaderText(null);
+    	Integer idGrupo=2;
     	if(grupo.isBlank()) {
     		error+="El nombre del grupo no puede estar vacio\n";
     	}
     	if(error.isEmpty()) {
     		try {
-				MainApp.getApi().createGroup(grupo);
+				idGrupo=MainApp.getApi().createGroup(grupo);
 				al.setAlertType(AlertType.INFORMATION);
 				error="Grupo creado correctamente";
 			} catch (ApiException e) {
@@ -63,7 +64,17 @@ public class CrearGrupoController {
 				al.setContentText(error);
 				al.showAndWait();
 				if(error.equals("Grupo creado correctamente")) {
-					Navegador.cargarVista("PestaniaPrincipal", null);
+					try {
+						al.setHeaderText("Token del grupo:");
+						String url=MainApp.getApi().getGroupInvite(idGrupo);
+						TextField texto=new TextField(url);
+						al.getDialogPane().setContent(texto);
+						al.setWidth(al.getWidth()*3);
+						al.showAndWait();
+						Navegador.cargarVista("PestaniaPrincipal", null);
+					} catch (ApiException e) {
+						e.printStackTrace();
+					}
 				}
 			}
     	}
