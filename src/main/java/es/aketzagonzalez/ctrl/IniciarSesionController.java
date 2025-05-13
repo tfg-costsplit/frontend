@@ -36,6 +36,9 @@ public class IniciarSesionController {
     /** The txt email. */
     @FXML
     private TextField txtEmail;
+    
+    /** The token. */
+    private static UserData token;
 
     /**
      * Accion cancelar.
@@ -70,7 +73,7 @@ public class IniciarSesionController {
     		login.setEmail(email);
     		login.setPassword(contrasenia);
     		try {
-	    		UserData token=MainApp.getApi().loginUser(login);
+	    		token=MainApp.getApi().loginUser(login);
 	    		MainApp.getApiClient().setRequestInterceptor(request -> request.header("Authorization", "Bearer " + token.getToken()));
 	    		MainApp.setApi(new DefaultApi(MainApp.getApiClient()));
 	    		Navegador.cargarVista("PestaniaPrincipal", null);
@@ -95,5 +98,14 @@ public class IniciarSesionController {
     void accionRegistrarse(ActionEvent event) {
     	Navegador.cargarVista("Registrarse", null);
     }
+    
+    /**
+     * Gets the token.
+     *
+     * @return the token
+     */
+    public static UserData getToken() {
+		return token;
+	}
 
 }

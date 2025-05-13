@@ -51,7 +51,8 @@ public class UnirseAGrupoController {
 	    	error+="El token no puede estar vacio";
     	}else {
     		try {
-				MainApp.getApi().joinGroup(txtTokenGrupo.getText());
+				Integer idGrupo=MainApp.getApi().joinGroup(txtTokenGrupo.getText());
+				IniciarSesionController.getToken().getGroups().add(idGrupo);
 				Navegador.cargarVista("PestaniaPrincipal", null);
 			} catch (ApiException e) {
 				error+="No se ha podido aniadir al grupo";

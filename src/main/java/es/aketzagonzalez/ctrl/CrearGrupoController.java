@@ -67,6 +67,8 @@ public class CrearGrupoController {
 					try {
 						al.setHeaderText("Token del grupo:");
 						String url=MainApp.getApi().getGroupInvite(idGrupo);
+						MainApp.getApi().joinGroup(url);
+						IniciarSesionController.getToken().getGroups().add(idGrupo);
 						TextField texto=new TextField(url);
 						al.getDialogPane().setContent(texto);
 						al.setWidth(al.getWidth()*3);
