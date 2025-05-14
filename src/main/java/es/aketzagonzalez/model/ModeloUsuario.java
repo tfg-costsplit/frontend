@@ -3,19 +3,25 @@ package es.aketzagonzalez.model;
 public class ModeloUsuario {
 
 	private String nombre;
-	private String email;
-	private String contrasenia;
+	private int id;
 	
-	public ModeloUsuario(String nombre, String email, String contrasenia) {
+	public ModeloUsuario(String nombre, int id) {
 		super();
-		this.nombre = nombre;
-		this.email = email;
-		this.contrasenia = contrasenia;
+		this.nombre = nombre; 
+		this.id=id;
 	}
 	
 	@Override
 	public String toString() {
 		return this.nombre;
+	}
+	
+	public String getNombre() {
+		return nombre;
+	}
+	
+	public int getId() {
+		return id;
 	}
 	
 }

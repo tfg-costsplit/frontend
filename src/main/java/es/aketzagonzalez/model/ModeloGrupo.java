@@ -1,21 +1,23 @@
 package es.aketzagonzalez.model;
 
-import java.util.ArrayList;
-
 public class ModeloGrupo {
 
 	private String nombre;
-	private ArrayList<ModeloUsuario> lstUsuarios;
+	private int id;
 	
-	public ModeloGrupo(String nombre, ArrayList<ModeloUsuario> lstUsuarios) {
+	public ModeloGrupo(String nombre,int id) {
 		super();
 		this.nombre = nombre;
-		this.lstUsuarios = lstUsuarios;
+		this.id=id;
 	} 
 	
 	@Override
 	public String toString() {
 		return this.nombre;
+	}
+	
+	public int getId() {
+		return id;
 	}
 	
 }

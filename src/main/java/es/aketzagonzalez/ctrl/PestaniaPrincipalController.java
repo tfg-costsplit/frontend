@@ -1,5 +1,6 @@
 package es.aketzagonzalez.ctrl;
 
+import es.aketzagonzalez.model.ModeloPago;
 import es.aketzagonzalez.utilidad.Navegador;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,7 +15,7 @@ public class PestaniaPrincipalController {
 
     /** The lst gastos. */
     @FXML
-    private ListView<?> lstGastos;
+    private ListView<ModeloPago> lstGastos;
 
     /**
      * Aniadir compra.
@@ -23,7 +24,7 @@ public class PestaniaPrincipalController {
      */
     @FXML
     void aniadirCompra(ActionEvent event) {
-
+    	Navegador.cargarVista("AniadirPago", null);
     }
 
     /**
