@@ -107,7 +107,7 @@ public class AniadirPagoController {
 	    		purchase.setDescription(txtDescripcion.getText());
 	    		purchase.setGroupId(cmbGrupos.getSelectionModel().getSelectedItem().getId());
 	    		purchase.setPayments(mapaPagos);
-	    		//TODO falta añadir el cost, cuando se actualize el api aparecerá el setCost()
+	    		purchase.setCost((long)cantidadTotal*100);
 	    		try {
 					MainApp.getApi().createPurchase(purchase);
 				} catch (ApiException e) {
