@@ -10,6 +10,7 @@ import es.aketzagonzalez.model.ModeloPago;
 import es.aketzagonzalez.utilidad.Navegador;
 import io.github.costsplit.api.invoker.ApiException;
 import io.github.costsplit.api.model.PayEntry;
+import io.github.costsplit.api.model.PurchaseData;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -70,29 +71,21 @@ public class PestaniaPrincipalController {
     
     @FXML
     public void initialize() {
-    	Map<String, PayEntry> mapaPagosTuyos=new HashMap<String, PayEntry>();
     	List<Integer> grupos=IniciarSesionController.getToken().getGroups();
     	for(Integer i:grupos) {
     		try {
-				List<Integer> compras=MainApp.getApi().getGroupData(i).getPurchases();
-				System.out.println(compras);
-				for(Integer j:compras) {
-					System.out.println(j);
-					Map<String, PayEntry> mapaPagosTodos=MainApp.getApi().getPurchaseData(j).getPayments();
-					for (Map.Entry<String, PayEntry> entry : mapaPagosTodos.entrySet()) {
-						int idUsuario=Integer.parseInt(entry.getKey());
-						if(idUsuario==IniciarSesionController.getToken().getId()) {
-							mapaPagosTuyos.put(idUsuario+"", entry.getValue());
+    			List<PurchaseData> compras=MainApp.getApi().getAllGroupData(i).getPurchases();
+				for(PurchaseData datosCompra:compras) {
+					for (Map.Entry<String, PayEntry> entry : datosCompra.getPayments().entrySet()) {
+						if(Integer.parseInt(entry.getKey())==IniciarSesionController.getToken().getId()) {
+							lstGastos.getItems().add(new ModeloPago(entry.getKey(),datosCompra.getDescription(),
+									(double)entry.getValue().getShouldPay()/100));
 						}
 					}
 				}
 			} catch (ApiException e) {
 				e.printStackTrace();
 			}
-    	}
-    	
-    	for (Map.Entry<String, PayEntry> entry : mapaPagosTuyos.entrySet()) {
-    		lstGastos.getItems().add(new ModeloPago(entry.getKey(),(double)entry.getValue().getShouldPay()/100));
     	}
     }
 
