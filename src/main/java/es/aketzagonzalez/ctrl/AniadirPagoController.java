@@ -17,15 +17,16 @@ import javafx.scene.layout.VBox;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.function.UnaryOperator;
 
 import es.aketzagonzalez.costsplitFrontend.MainApp;
 import es.aketzagonzalez.model.ModeloGrupo;
 import es.aketzagonzalez.model.ModeloUsuario;
 import es.aketzagonzalez.utilidad.Navegador;
-import es.aketzagonzalez.utilidad.PayEntry;
 import io.github.costsplit.api.invoker.ApiException;
 import io.github.costsplit.api.model.AddPurchase;
+import io.github.costsplit.api.model.PayEntry;
 import io.github.costsplit.api.model.UserInfo;
 
 public class AniadirPagoController {
@@ -67,7 +68,7 @@ public class AniadirPagoController {
     
     private UnaryOperator<TextFormatter.Change> filter;
     
-    private HashMap<String, Object> mapaPagos=new HashMap<String, Object>();
+    private Map<String, PayEntry> mapaPagos=new HashMap<String, PayEntry>();
     
     private double alturaOriginal=Navegador.getStage().getHeight();
 
@@ -93,7 +94,10 @@ public class AniadirPagoController {
 	                String texto = campo.getText();
                     try {
                         double cantidad = Double.parseDouble(texto.replace(",", "."));
-                        mapaPagos.put(usuario.getId()+"", new PayEntry(0, (int)cantidad*100));
+						PayEntry entry=new PayEntry();
+						entry.setPaid(0l);
+						entry.setShouldPay((long)cantidad*100);
+                        mapaPagos.put(usuario.getId()+"", entry);
                     } catch (NumberFormatException e) {
                         al.showAndWait();
                         return;
