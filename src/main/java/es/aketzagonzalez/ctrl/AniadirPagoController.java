@@ -79,7 +79,6 @@ public class AniadirPagoController {
 
     @FXML
     void accionGuardar(ActionEvent event) {
-        // TODO Por implementar
     	Alert al=new Alert(AlertType.ERROR);
     	al.setHeaderText(null);
     	if(txtDescripcion.getText().isBlank()) {
@@ -110,6 +109,10 @@ public class AniadirPagoController {
 	    		purchase.setCost((long)cantidadTotal*100);
 	    		try {
 					MainApp.getApi().createPurchase(purchase);
+					al.setContentText("Factura registrada correctamente");
+					al.setAlertType(AlertType.INFORMATION);
+					al.showAndWait();
+					Navegador.cargarVista("PestaniaPrincipal", null);
 				} catch (ApiException e) {
 					e.printStackTrace();
 				}

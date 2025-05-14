@@ -2,8 +2,13 @@ package es.aketzagonzalez.model;
 
 public class ModeloPago {
 
-	private ModeloUsuario persona;
+	private String idUsuario;
 	private Double cantidad;
-	private ModeloGrupo grupo;
+	
+	public ModeloPago(String idUsuario, Double cantidad) {
+		super();
+		this.idUsuario = idUsuario;
+		this.cantidad = cantidad;
+	}
 	
 }
