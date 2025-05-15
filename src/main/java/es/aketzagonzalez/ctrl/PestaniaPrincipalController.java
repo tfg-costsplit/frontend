@@ -1,7 +1,5 @@
 package es.aketzagonzalez.ctrl;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -44,6 +42,11 @@ public class PestaniaPrincipalController {
     @FXML
     void crearGrupo(ActionEvent event) {
     	Navegador.cargarVista("CrearGrupo", null);
+    	}
+    
+    @FXML
+    void pagar(ActionEvent event) {
+    	Navegador.cargarVista("Pagar", null);
     }
     
     /**
@@ -77,9 +80,11 @@ public class PestaniaPrincipalController {
     			List<PurchaseData> compras=MainApp.getApi().getAllGroupData(i).getPurchases();
 				for(PurchaseData datosCompra:compras) {
 					for (Map.Entry<String, PayEntry> entry : datosCompra.getPayments().entrySet()) {
-						if(Integer.parseInt(entry.getKey())==IniciarSesionController.getToken().getId()) {
+						if(Integer.parseInt(entry.getKey())==IniciarSesionController.getToken().getId()&&
+								datosCompra.getPayments().get(entry.getKey()).getShouldPay()-
+								datosCompra.getPayments().get(entry.getKey()).getPaid()!=0) {
 							lstGastos.getItems().add(new ModeloPago(entry.getKey(),datosCompra.getDescription(),
-									(double)entry.getValue().getShouldPay()/100));
+									((double)(entry.getValue().getShouldPay()-entry.getValue().getPaid()))/100));
 						}
 					}
 				}

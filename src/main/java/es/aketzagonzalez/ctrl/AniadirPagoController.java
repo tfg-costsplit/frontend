@@ -95,7 +95,8 @@ public class AniadirPagoController {
                         double cantidad = Double.parseDouble(texto.replace(",", "."));
 						PayEntry entry=new PayEntry();
 						entry.setPaid(0l);
-						entry.setShouldPay((long)cantidad*100);
+						cantidad*=100;
+						entry.setShouldPay((long)cantidad);
                         mapaPagos.put(usuario.getId()+"", entry);
                     } catch (NumberFormatException e) {
                         al.showAndWait();
@@ -106,7 +107,8 @@ public class AniadirPagoController {
 	    		purchase.setDescription(txtDescripcion.getText());
 	    		purchase.setGroupId(cmbGrupos.getSelectionModel().getSelectedItem().getId());
 	    		purchase.setPayments(mapaPagos);
-	    		purchase.setCost((long)cantidadTotal*100);
+	    		cantidadTotal*=100;
+	    		purchase.setCost((long)(cantidadTotal));
 	    		try {
 					MainApp.getApi().createPurchase(purchase);
 					al.setContentText("Factura registrada correctamente");

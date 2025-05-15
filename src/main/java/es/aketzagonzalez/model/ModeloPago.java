@@ -1,5 +1,7 @@
 package es.aketzagonzalez.model;
 
+import java.util.Objects;
+
 public class ModeloPago {
 
 	private String idUsuario;
@@ -15,7 +17,33 @@ public class ModeloPago {
 	
 	@Override
 	public String toString() {
-		return this.descripcion+" "+this.cantidad;
+		return this.descripcion+" "+this.cantidad+"€";
+	}
+	
+	public void setCantidad(Double cantidad) {
+		this.cantidad = cantidad;
+	}
+	
+	public Double getCantidad() {
+		return cantidad;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(cantidad, descripcion, idUsuario);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		ModeloPago other = (ModeloPago) obj;
+		return Objects.equals(cantidad, other.cantidad) && Objects.equals(descripcion, other.descripcion)
+				&& Objects.equals(idUsuario, other.idUsuario);
 	}
 	
 }
