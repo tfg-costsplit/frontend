@@ -1,0 +1,92 @@
+package io.github.costsplit.ctrl;
+
+import io.github.costsplit.costsplitFrontend.MainApp;
+import io.github.costsplit.utilidad.Navegador;
+import io.github.costsplit.api.model.Login;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+
+/**
+ * The Class IniciarSesionController.
+ */
+public class IniciarSesionController {
+
+    /** The btn cancelar. */
+    @FXML
+    private Button btnCancelar;
+
+    /** The btn iniciar sesion. */
+    @FXML
+    private Button btnIniciarSesion;
+
+    /** The btn registrarse. */
+    @FXML
+    private Button btnRegistrarse;
+    
+    @FXML
+    private TextField txtContrasenia;
+
+    @FXML
+    private TextField txtEmail;
+
+    /**
+     * Accion cancelar.
+     *
+     * @param event the event
+     */
+    @FXML
+    void accionCancelar(ActionEvent event) {
+    	MainApp.getStage().close();
+    }
+
+    /**
+     * Accion login.
+     *
+     * @param event the event
+     */
+    @FXML
+    void accionLogin(ActionEvent event) {
+    	String email=txtEmail.getText();
+    	String contrasenia=txtContrasenia.getText();
+    	String error="";
+    	Alert al=new Alert(AlertType.ERROR);
+    	al.setHeaderText(null);
+    	if(email.isBlank()) {
+    		error+="El email no puede estar vacio\n";
+    	}
+    	if(contrasenia.isBlank()) {
+    		error+="La contraseña no puede estar vacia\n";
+    	}
+    	if(error.isEmpty()) {
+    		Login login=new Login();
+    		login.setEmail(email);
+    		login.setPassword(contrasenia);
+    		try {
+	    		MainApp.getApi().loginUser(login);
+	    		Navegador.cargarVista("PestaniaPrincipal", null);
+    		}catch(Exception e) {
+    			error="Usuario o contraseña inválido";
+    			al.setContentText(error);
+    			al.showAndWait();
+    		}
+    	}else {
+    		al.setContentText(error);
+    		al.showAndWait();
+    	}
+    }
+
+    /**
+     * Accion registrarse.
+     *
+     * @param event the event
+     */
+    @FXML
+    void accionRegistrarse(ActionEvent event) {
+    	Navegador.cargarVista("Registrarse", null);
+    }
+
+}

@@ -1,6 +1,0 @@
-Manifest-Version: 1.0
-Built-By: Aketza
-Build-Jdk: 17.0.12
-Main-Class: es.aketzagonzalez.lanzador.Lanzador
-Created-By: Maven Integration for Eclipse
-

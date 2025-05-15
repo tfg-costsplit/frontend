@@ -1,11 +1,11 @@
-module es.aketzagonzalez {
+module io.github.costsplit.frontend {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.media;
     requires api;
 	requires java.net.http;
 	requires javafx.graphics;
-    opens es.aketzagonzalez.ctrl to javafx.fxml;
-    exports es.aketzagonzalez.costsplitFrontend;
-    exports es.aketzagonzalez.model;
+    opens io.github.costsplit.ctrl to javafx.fxml;
+    exports io.github.costsplit.costsplitFrontend;
+    exports io.github.costsplit.model;
 }

@@ -1,11 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
   </component>
-  <component name="RunManager">
+  <component name="ChangeListManager">
+    <list default="true" id="17ef90f5-9a15-411d-9ea6-fcf7a0ead3f9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/aketzagonzalez/costsplitFrontend/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/costsplit/costsplitFrontend/MainApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/aketzagonzalez/ctrl/CrearGrupoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/costsplit/ctrl/CrearGrupoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/aketzagonzalez/ctrl/IniciarSesionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/costsplit/ctrl/IniciarSesionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/aketzagonzalez/ctrl/PestaniaPrincipalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/costsplit/ctrl/PestaniaPrincipalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/aketzagonzalez/ctrl/RegistrarseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/costsplit/ctrl/RegistrarseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/aketzagonzalez/ctrl/UsuariosAAniadirController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/costsplit/ctrl/UsuariosAAniadirController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/aketzagonzalez/lanzador/Lanzador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/costsplit/lanzador/Lanzador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/aketzagonzalez/model/ModeloCompra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/costsplit/model/ModeloCompra.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/aketzagonzalez/model/ModeloGrupo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/costsplit/model/ModeloGrupo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/aketzagonzalez/model/ModeloPago.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/costsplit/model/ModeloPago.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/aketzagonzalez/model/ModeloUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/costsplit/model/ModeloUsuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/aketzagonzalez/utilidad/Navegador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/costsplit/utilidad/Navegador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/CrearGrupo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/CrearGrupo.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/IniciarSesion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/IniciarSesion.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/PestaniaPrincipal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/PestaniaPrincipal.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/Registrarse.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/Registrarse.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/UsuariosAAniadir.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/UsuariosAAniadir.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/maven/es.aketzagonzalez/costsplitFrontend/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/maven/es.aketzagonzalez/costsplitFrontend/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/es/aketzagonzalez/costsplitFrontend/MainApp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/es/aketzagonzalez/ctrl/CrearGrupoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/es/aketzagonzalez/ctrl/IniciarSesionController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/es/aketzagonzalez/ctrl/PestaniaPrincipalController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/es/aketzagonzalez/ctrl/RegistrarseController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/es/aketzagonzalez/lanzador/Lanzador.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/es/aketzagonzalez/model/ModeloCompra.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/es/aketzagonzalez/model/ModeloGrupo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/es/aketzagonzalez/model/ModeloPago.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/es/aketzagonzalez/model/ModeloUsuario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/es/aketzagonzalez/utilidad/Navegador.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/CrearGrupo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/CrearGrupo.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/IniciarSesion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/IniciarSesion.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/PestaniaPrincipal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/PestaniaPrincipal.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/Registrarse.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/Registrarse.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/modules/api-0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/modules/jackson-core-2.17.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/modules/jackson-databind-2.17.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/modules/javafx-base-22-win.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/modules/javafx-base-22.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/modules/javafx-controls-22-win.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/modules/javafx-controls-22.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/modules/javafx-fxml-22-win.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/modules/javafx-fxml-22.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/modules/javafx-graphics-22-win.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/modules/javafx-graphics-22.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/modules/javafx-media-22-win.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/modules/javafx-media-22.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilidad/Navegador.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2wsD1HfbaQbupwFTDMZcSPi1sDn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showScratchesAndConsoles" value="false" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Lanzador.executor": "Run",
+    "Application.MainApp.executor": "Run",
+    "Maven.costsplitFrontend [clean].executor": "Run",
+    "Maven.costsplitFrontend [compile].executor": "Run",
+    "Maven.costsplitFrontend [package].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.io.github.costsplit.lanzador.Lanzador">
     <configuration name="MainApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="es.aketzagonzalez.costsplitFrontend.MainApp" />
       <module name="costsplitFrontend" />
@@ -19,8 +112,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="io.github.costsplit.lanzador.Lanzador" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="/lib/jvm/default" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="io.github.costsplit.lanzador.Lanzador" />
+      <module name="costsplitFrontend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="es.aketzagonzalez.lanzador.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.io.github.costsplit.lanzador.Lanzador" />
+      <item itemvalue="Application.MainApp" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.io.github.costsplit.lanzador.Lanzador" />
         <item itemvalue="Application.MainApp" />
       </list>
     </recent_temporary>
@@ -37,7 +150,18 @@
       </list>
     </option>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="17ef90f5-9a15-411d-9ea6-fcf7a0ead3f9" name="Changes" comment="" />
+      <created>1746821170648</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1746821170648</updated>
+    </task>
+    <servers />
   </component>
 </project>
