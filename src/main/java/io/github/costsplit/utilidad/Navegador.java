@@ -44,5 +44,9 @@ public class Navegador {
             e.printStackTrace();
         }
     }
+    
+    public static Stage getStage() {
+		return stage;
+	}
 }
 

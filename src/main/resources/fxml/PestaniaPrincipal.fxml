@@ -16,11 +16,13 @@
           <Menu mnemonicParsing="false" text="Compra">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#aniadirCompra" text="Añadir compra" />
+                  <MenuItem mnemonicParsing="false" onAction="#pagar" text="Pagar pendiente" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Grupo">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#crearGrupo" text="Crear grupo" />
+                  <MenuItem mnemonicParsing="false" onAction="#unirseAGrupo" text="Unirse a grupo" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Ayuda">
@@ -32,7 +34,7 @@
       </MenuBar>
       <VBox alignment="TOP_CENTER" spacing="20.0">
          <children>
-            <Label text="Gastos:">
+            <Label text="Gastos Pendientes:">
                <font>
                   <Font size="18.0" />
                </font>

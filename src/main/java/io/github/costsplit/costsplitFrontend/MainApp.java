@@ -16,7 +16,12 @@ public class MainApp extends Application {
     
     /** The stage. */
     private static Stage stage;
+    
+    /** The api. */
     private static DefaultApi api;
+    
+    /** The api client. */
+    private static ApiClient apiClient;
 
     /**
      * Start.
@@ -32,9 +37,10 @@ public class MainApp extends Application {
         Navegador.cargarVista("IniciarSesion", null);
         stage.show();
         try {
-	        api = new DefaultApi(new ApiClient()
-	        	    .setHost("localhost")
-	        	    .setPort(8080));
+        	apiClient=new ApiClient();
+        	apiClient.setHost("localhost");
+        	apiClient.setPort(8080);
+	        api = new DefaultApi(apiClient);
         }catch(Exception e) {
         	e.printStackTrace();
         }
@@ -59,12 +65,30 @@ public class MainApp extends Application {
 	}
     
     /**
-     * Gets the api
-     * 
+     * Gets the api.
+     *
      * @return the api
      */
     public static DefaultApi getApi() {
 		return api;
+	}
+    
+    /**
+     * Sets the api.
+     *
+     * @param api the new api
+     */
+    public static void setApi(DefaultApi api) {
+		MainApp.api = api;
+	}
+    
+    /**
+     * Gets the api client.
+     *
+     * @return the api client
+     */
+    public static ApiClient getApiClient() {
+		return apiClient;
 	}
 
 }

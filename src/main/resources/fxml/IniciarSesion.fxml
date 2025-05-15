@@ -38,8 +38,8 @@
       </GridPane>
       <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="50.0">
          <children>
-            <Button fx:id="btnIniciarSesion" mnemonicParsing="false" onAction="#accionLogin" text="Iniciar sesion" />
-            <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#accionCancelar" text="Cancelar" />
+            <Button fx:id="btnIniciarSesion" defaultButton="true" mnemonicParsing="false" onAction="#accionLogin" text="Iniciar sesion" />
+            <Button fx:id="btnCancelar" cancelButton="true" mnemonicParsing="false" onAction="#accionCancelar" text="Cancelar" />
          </children>
       </HBox>
       <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
