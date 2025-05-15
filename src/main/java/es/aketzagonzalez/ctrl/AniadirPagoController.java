@@ -29,54 +29,83 @@ import io.github.costsplit.api.model.AddPurchase;
 import io.github.costsplit.api.model.PayEntry;
 import io.github.costsplit.api.model.UserInfo;
 
+/**
+ * The Class AniadirPagoController.
+ */
 public class AniadirPagoController {
 
+    /** The btn cancelar. */
     @FXML
     private Button btnCancelar;
 
+    /** The btn guardar. */
     @FXML
     private Button btnGuardar;
 
+    /** The btn fijar cantidad. */
     @FXML
     private Button btnFijarCantidad;
     
+    /** The cmb grupos. */
     @FXML
     private ComboBox<ModeloGrupo> cmbGrupos;
 
+    /** The contenedor usuarios. */
     @FXML
     private VBox contenedorUsuarios;
 
+    /** The scroll pane. */
     @FXML
     private ScrollPane scrollPane;
 
+    /** The lbl cantidad. */
     @FXML
     private Label lblCantidad;
 
+    /** The txt cantidad total. */
     @FXML
     private TextField txtCantidadTotal;
     
+    /** The txt descripcion. */
     @FXML
     private TextField txtDescripcion;
 
+    /** The usuarios. */
     private List<ModeloUsuario> usuarios;
 
+    /** The cantidad total. */
     private double cantidadTotal = -1.0;
 
+    /** The cantidad ahora. */
     private double cantidadAhora = -9.0;
 
+    /** The campos cantidad usuarios. */
     private List<TextField> camposCantidadUsuarios = new ArrayList<>();
     
+    /** The filter. */
     private UnaryOperator<TextFormatter.Change> filter;
     
+    /** The mapa pagos. */
     private Map<String, PayEntry> mapaPagos=new HashMap<String, PayEntry>();
     
+    /** The altura original. */
     private double alturaOriginal=Navegador.getStage().getHeight();
 
+    /**
+     * Accion cancelar.
+     *
+     * @param event the event
+     */
     @FXML
     void accionCancelar(ActionEvent event) {
         Navegador.cargarVista("PestaniaPrincipal", null);
     }
 
+    /**
+     * Accion guardar.
+     *
+     * @param event the event
+     */
     @FXML
     void accionGuardar(ActionEvent event) {
     	Alert al=new Alert(AlertType.ERROR);
@@ -125,11 +154,19 @@ public class AniadirPagoController {
     	}
     }
 
+    /**
+     * Seleccionar grupo.
+     *
+     * @param event the event
+     */
     @FXML
     void seleccionarGrupo(ActionEvent event) {
     	cargarUsuarios(filter,cmbGrupos.getSelectionModel().getSelectedItem().getId());
     }
 
+    /**
+     * Initialize.
+     */
     @FXML
     public void initialize() {
         // Permitir números con , o . como separador decimal
@@ -167,6 +204,12 @@ public class AniadirPagoController {
         
     }
 
+    /**
+     * Cargar usuarios.
+     *
+     * @param filter the filter
+     * @param idGrupo the id grupo
+     */
     private void cargarUsuarios(UnaryOperator<TextFormatter.Change> filter,int idGrupo) {
     	try {
     		usuarios = new ArrayList<ModeloUsuario>();
@@ -211,6 +254,9 @@ public class AniadirPagoController {
         
     }
 
+    /**
+     * Actualizar cantidad.
+     */
     private void actualizarCantidad() {
         cantidadAhora = 0.0;
 

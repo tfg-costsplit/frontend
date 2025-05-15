@@ -44,6 +44,11 @@ public class PestaniaPrincipalController {
     	Navegador.cargarVista("CrearGrupo", null);
     	}
     
+    /**
+     * Pagar.
+     *
+     * @param event the event
+     */
     @FXML
     void pagar(ActionEvent event) {
     	Navegador.cargarVista("Pagar", null);
@@ -72,6 +77,9 @@ public class PestaniaPrincipalController {
     	al.showAndWait();
     }
     
+    /**
+     * Initialize.
+     */
     @FXML
     public void initialize() {
     	List<Integer> grupos=IniciarSesionController.getToken().getGroups();

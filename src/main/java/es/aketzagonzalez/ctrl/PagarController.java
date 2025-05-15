@@ -22,34 +22,55 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
 
+/**
+ * The Class PagarController.
+ */
 public class PagarController {
 
+    /** The btn cancelar. */
     @FXML
     private Button btnCancelar;
 
+    /** The btn pagar. */
     @FXML
     private Button btnPagar;
 
+    /** The cmb pagos A realizar. */
     @FXML
     private ComboBox<ModeloPago> cmbPagosARealizar;
 
+    /** The txt cantidad A pagar. */
     @FXML
     private TextField txtCantidadAPagar;
     
+    /** The lbl cantidad. */
     @FXML
     private Label lblCantidad;
     
+    /** The cantidad total. */
     private double cantidadTotal = -1.0;
 
+    /** The cantidad ahora. */
     private double cantidadAhora = 0.0;
     
+    /** The filter. */
     private UnaryOperator<TextFormatter.Change> filter;
 
+    /**
+     * Accion cancelar.
+     *
+     * @param event the event
+     */
     @FXML
     void accionCancelar(ActionEvent event) {
     	Navegador.cargarVista("PestaniaPrincipal", null);
     }
 
+    /**
+     * Accion pagar.
+     *
+     * @param event the event
+     */
     @FXML
     void accionPagar(ActionEvent event) {
     	Alert al=new Alert(AlertType.ERROR);
@@ -97,11 +118,19 @@ public class PagarController {
     	}
     }
 
+    /**
+     * Seleccionar pago.
+     *
+     * @param event the event
+     */
     @FXML
     void seleccionarPago(ActionEvent event) {
     	actualizarCantidad();
     }
     
+    /**
+     * Initialize.
+     */
     @FXML
     public void initialize() {
     	filter = change -> {
@@ -148,6 +177,9 @@ public class PagarController {
         }
     }
     
+    /**
+     * Actualizar cantidad.
+     */
     private void actualizarCantidad() {
     	cantidadAhora=0;
     	cantidadTotal=cmbPagosARealizar.getSelectionModel().getSelectedItem().getCantidad();
