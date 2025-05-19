@@ -1,6 +1,6 @@
-package es.aketzagonzalez.lanzador;
+package io.github.costsplit.lanzador;
 
-import es.aketzagonzalez.costsplitFrontend.MainApp;
+import io.github.costsplit.costsplitFrontend.MainApp;
 
 /**
  * The Class Lanzador.

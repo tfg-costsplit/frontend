@@ -1,4 +1,4 @@
-package es.aketzagonzalez.model;
+package io.github.costsplit.model;
 
 /**
  * The Class ModeloUsuario.

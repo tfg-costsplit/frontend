@@ -1,4 +1,4 @@
-package es.aketzagonzalez.ctrl;
+package io.github.costsplit.ctrl;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,10 +20,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.UnaryOperator;
 
-import es.aketzagonzalez.costsplitFrontend.MainApp;
-import es.aketzagonzalez.model.ModeloGrupo;
-import es.aketzagonzalez.model.ModeloUsuario;
-import es.aketzagonzalez.utilidad.Navegador;
+import io.github.costsplit.costsplitFrontend.MainApp;
+import io.github.costsplit.model.ModeloGrupo;
+import io.github.costsplit.model.ModeloUsuario;
+import io.github.costsplit.utilidad.Navegador;
 import io.github.costsplit.api.invoker.ApiException;
 import io.github.costsplit.api.model.AddPurchase;
 import io.github.costsplit.api.model.PayEntry;

@@ -1,7 +1,7 @@
-package es.aketzagonzalez.ctrl;
+package io.github.costsplit.ctrl;
 
-import es.aketzagonzalez.costsplitFrontend.MainApp;
-import es.aketzagonzalez.utilidad.Navegador;
+import io.github.costsplit.costsplitFrontend.MainApp;
+import io.github.costsplit.utilidad.Navegador;
 import io.github.costsplit.api.DefaultApi;
 import io.github.costsplit.api.model.Login;
 import io.github.costsplit.api.model.UserData;

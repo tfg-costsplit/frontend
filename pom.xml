@@ -13,19 +13,19 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<mainClass>es.aketzagonzalez.lanzador.Lanzador</mainClass>
+		<mainClass>io.github.costsplit.lanzador.Lanzador</mainClass>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.openjfx</groupId>
 			<artifactId>javafx-fxml</artifactId>
-			<version>22</version>
+			<version>21</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openjfx</groupId>
 			<artifactId>javafx-media</artifactId>
-			<version>22</version>
+			<version>21</version>
 		</dependency>
 		<dependency>
 			<groupId>io.github.costsplit</groupId>

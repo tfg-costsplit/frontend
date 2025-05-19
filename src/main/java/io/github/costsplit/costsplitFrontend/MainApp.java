@@ -1,11 +1,11 @@
-package es.aketzagonzalez.costsplitFrontend;
+package io.github.costsplit.costsplitFrontend;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-import es.aketzagonzalez.utilidad.Navegador;
+import io.github.costsplit.utilidad.Navegador;
 import io.github.costsplit.api.DefaultApi;
 import io.github.costsplit.api.invoker.ApiClient;
 

@@ -1,11 +1,11 @@
-package es.aketzagonzalez.ctrl;
+package io.github.costsplit.ctrl;
 
 import java.util.List;
 import java.util.Map;
 
-import es.aketzagonzalez.costsplitFrontend.MainApp;
-import es.aketzagonzalez.model.ModeloPago;
-import es.aketzagonzalez.utilidad.Navegador;
+import io.github.costsplit.costsplitFrontend.MainApp;
+import io.github.costsplit.model.ModeloPago;
+import io.github.costsplit.utilidad.Navegador;
 import io.github.costsplit.api.invoker.ApiException;
 import io.github.costsplit.api.model.PayEntry;
 import io.github.costsplit.api.model.PurchaseData;

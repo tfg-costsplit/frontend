@@ -1,4 +1,4 @@
-package es.aketzagonzalez.utilidad;
+package io.github.costsplit.utilidad;
 
 import java.io.IOException;
 import java.util.ResourceBundle;
@@ -44,5 +44,9 @@ public class Navegador {
             e.printStackTrace();
         }
     }
+    
+    public static Stage getStage() {
+		return stage;
+	}
 }
 
