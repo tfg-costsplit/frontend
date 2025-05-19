@@ -1,0 +1,71 @@
+name: Cross-platform JAR Release with Launchers
+
+on:
+  push:
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'
+
+jobs:
+  build-linux:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v3
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Build JAR
+        run: mvn -B package --file pom.xml
+
+      - name: Create Linux package with shell launcher
+        run: |
+          mkdir dist
+          cp target/*.jar dist/costsplit.jar
+          cat > dist/run.sh <<'EOF'
+          #!/bin/bash
+          DIR="$(cd "$(dirname "$0")" && pwd)"
+          java -jar "$DIR/costsplit.jar" "$@"
+          EOF
+          chmod +x dist/run.sh
+          tar -czf costsplit-linux.tar.gz -C dist .
+
+      - name: Upload Linux package to GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: costsplit-linux.tar.gz
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v3
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Build JAR
+        run: mvn -B package --file pom.xml
+
+      - name: Create Windows package with .bat launcher
+        run: |
+          mkdir dist
+          copy target\*.jar dist\costsplit.jar
+          echo @echo off > dist\run.bat
+          echo java -jar "%%~dp0costsplit.jar" %%* >> dist\run.bat
+          powershell Compress-Archive -Path dist\* -DestinationPath costsplit-windows.zip
+
+      - name: Upload Windows package to GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: costsplit-windows.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
