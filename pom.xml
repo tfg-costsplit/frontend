@@ -36,7 +36,7 @@
 			<version>[21.0.2,22)</version>
 		</dependency>
 		<dependency>
-			<groupId>io.github.costsplit</groupId>
+			<groupId>io.github.tfg-costsplit</groupId>
 			<artifactId>api</artifactId>
 			<version>0.1.0</version>
 		</dependency>
