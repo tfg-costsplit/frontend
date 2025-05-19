@@ -62,6 +62,7 @@ jobs:
 
       - name: Set Maven version from tag
         run: mvn versions:set -DnewVersion=${GITHUB_REF#refs/tags/}
+        shell: bash
 
       - name: Build JAR
         run: mvn -B package --file pom.xml
