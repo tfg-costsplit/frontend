@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 /**
@@ -31,7 +32,7 @@ public class IniciarSesionController {
     
     /** The txt contrasenia. */
     @FXML
-    private TextField txtContrasenia;
+    private PasswordField txtContrasenia;
 
     /** The txt email. */
     @FXML
