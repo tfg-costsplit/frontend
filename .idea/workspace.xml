@@ -6,27 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4e095a87-14d3-4277-b5e8-8d8b0154ce3e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/aketzagonzalez/costsplitFrontend/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/costsplit/costsplitFrontend/MainApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/aketzagonzalez/ctrl/AniadirPagoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/costsplit/ctrl/AniadirPagoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/aketzagonzalez/ctrl/CrearGrupoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/costsplit/ctrl/CrearGrupoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/aketzagonzalez/ctrl/IniciarSesionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/costsplit/ctrl/IniciarSesionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/aketzagonzalez/ctrl/PagarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/costsplit/ctrl/PagarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/aketzagonzalez/ctrl/PestaniaPrincipalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/costsplit/ctrl/PestaniaPrincipalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/aketzagonzalez/ctrl/RegistrarseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/costsplit/ctrl/RegistrarseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/aketzagonzalez/ctrl/UnirseAGrupoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/costsplit/ctrl/UnirseAGrupoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/aketzagonzalez/lanzador/Lanzador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/costsplit/lanzador/Lanzador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/aketzagonzalez/model/ModeloGrupo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/costsplit/model/ModeloGrupo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/aketzagonzalez/model/ModeloPago.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/costsplit/model/ModeloPago.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/aketzagonzalez/model/ModeloUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/costsplit/model/ModeloUsuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/aketzagonzalez/utilidad/Navegador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/costsplit/utilidad/Navegador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/AniadirPago.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/AniadirPago.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/CrearGrupo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/CrearGrupo.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/IniciarSesion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/IniciarSesion.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/Pagar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/Pagar.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/PestaniaPrincipal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/PestaniaPrincipal.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/Registrarse.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/Registrarse.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/UnirseAGrupo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/UnirseAGrupo.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +29,8 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "estilo",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/aimar/scho/frontend"
   }
