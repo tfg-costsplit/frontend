@@ -7,6 +7,9 @@ on:
 
 jobs:
   build-linux:
+    permissions:
+      contents: write
+
     runs-on: ubuntu-latest
 
     steps:
@@ -43,6 +46,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   build-windows:
+    permissions:
+      contents: write
+
     runs-on: windows-latest
 
     steps:
