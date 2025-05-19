@@ -16,6 +16,14 @@
 		<mainClass>io.github.costsplit.lanzador.Lanzador</mainClass>
 	</properties>
 
+	<repositories>
+		<repository>
+			<id>github</id>
+			<name>GitHub tfg-costsplit Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/tfg-costsplit/backend</url>
+		</repository>
+	</repositories>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.openjfx</groupId>
@@ -30,7 +38,7 @@
 		<dependency>
 			<groupId>io.github.costsplit</groupId>
 			<artifactId>api</artifactId>
-			<version>0.1-SNAPSHOT</version>
+			<version>0.1.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>

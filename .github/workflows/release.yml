@@ -18,6 +18,22 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
+      - name: Set Maven version from tag
+        run: mvn versions:set -DnewVersion=${GITHUB_REF#refs/tags/}
+
+      - name: Setup Maven auth for GitHub Packages
+        run: |
+          mkdir -p ~/.m2
+          echo "<settings>
+            <servers>
+              <server>
+                <id>github</id>
+                <username>${{ github.actor }}</username>
+                <password>${{ secrets.GITHUB_TOKEN }}</password>
+              </server>
+            </servers>
+          </settings>" > ~/.m2/settings.xml
+
       - name: Build JAR
         run: mvn -B package --file pom.xml
 
@@ -26,9 +42,8 @@ jobs:
           mkdir dist
           cp target/*.jar dist/costsplit.jar
           cat > dist/run.sh <<'EOF'
-          #!/bin/bash
-          DIR="$(cd "$(dirname "$0")" && pwd)"
-          java -jar "$DIR/costsplit.jar" "$@"
+          #!/bin/sh
+          exec COSTSPLIT_HOST=costsplit-456211.oa.r.appspot.com COSTSPLIT_PORT=80 /usr/bin/java -jar "costsplit.jar" "$@"
           EOF
           chmod +x dist/run.sh
           tar -czf costsplit-linux.tar.gz -C dist .
@@ -52,6 +67,22 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
+      - name: Set Maven version from tag
+        run: mvn versions:set -DnewVersion=${GITHUB_REF#refs/tags/}
+
+      - name: Setup Maven auth for GitHub Packages
+        run: |
+          mkdir -p ~/.m2
+          echo "<settings>
+            <servers>
+              <server>
+                <id>github</id>
+                <username>${{ github.actor }}</username>
+                <password>${{ secrets.GITHUB_TOKEN }}</password>
+              </server>
+            </servers>
+          </settings>" > ~/.m2/settings.xml
+
       - name: Build JAR
         run: mvn -B package --file pom.xml
 
@@ -60,6 +91,8 @@ jobs:
           mkdir dist
           copy target\*.jar dist\costsplit.jar
           echo @echo off > dist\run.bat
+          echo set COSTSPLIT_HOST=costsplit-456211.oa.r.appspot.com > dist\run.bat
+          echo set COSTSPLIT_PORT=80 > dist\run.bat
           echo java -jar "%%~dp0costsplit.jar" %%* >> dist\run.bat
           powershell Compress-Archive -Path dist\* -DestinationPath costsplit-windows.zip
 
