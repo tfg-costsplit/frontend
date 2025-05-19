@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 import io.github.costsplit.utilidad.Navegador;
 import io.github.costsplit.api.DefaultApi;
@@ -38,8 +39,8 @@ public class MainApp extends Application {
         stage.show();
         try {
         	apiClient=new ApiClient();
-        	apiClient.setHost("localhost");
-        	apiClient.setPort(8080);
+        	apiClient.setHost(Objects.requireNonNullElse(System.getenv("COSTSPLIT_HOST"), "localhost"));
+        	apiClient.setPort(Integer.parseInt(Objects.requireNonNullElse(System.getenv("COSTSPLIT_PORT"), "8080")));
 	        api = new DefaultApi(apiClient);
         }catch(Exception e) {
         	e.printStackTrace();
