@@ -6,12 +6,11 @@ on:
       - '[0-9]+.[0-9]+.[0-9]+'
 
 jobs:
-  build-all:
-    permissions:
-      contents: write
-
+  build:
+    name: Build JAR
     runs-on: ubuntu-latest
-
+    outputs:
+      version: ${{ steps.set-version.outputs.version }}
     steps:
       - uses: actions/checkout@v4
 
@@ -22,44 +21,65 @@ jobs:
           distribution: 'temurin'
 
       - name: Set Maven version from tag
-        run: mvn versions:set -DnewVersion=${GITHUB_REF#refs/tags/}
+        id: set-version
+        run: |
+          VERSION=${GITHUB_REF#refs/tags/}
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          mvn versions:set -DnewVersion=$VERSION
 
       - name: Build JAR
         run: mvn -B package --file pom.xml
 
-      - name: Create Linux package with shell launcher
-        run: |
-          mkdir dist-linux
-          cp target/*.jar dist-linux/costsplit.jar
-          cat > dist-linux/run.sh <<'EOF'
-          #!/bin/sh
-          export COSTSPLIT_URI=https://costsplit-456211.oa.r.appspot.com
-          exec /usr/bin/java -jar "costsplit.jar" "$@"
-          EOF
-          chmod +x dist-linux/run.sh
-          tar -czf costsplit-linux.tar.gz -C dist-linux .
+      - name: Upload JAR as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: costsplit-jar
+          path: target/*.jar
 
-      - name: Upload Linux package to GitHub Release
+  package:
+    name: Package Launchers
+    needs: build
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download JAR
+        uses: actions/download-artifact@v4
+        with:
+          name: costsplit-jar
+
+      - name: Create Launcher
+        run: |
+          if [ "$RUNNER_OS" = "Linux" ]; then
+            mkdir dist-linux
+            cp costsplit*.jar dist-linux/costsplit.jar
+            cat > dist-linux/run.sh <<'EOF'
+            #!/bin/sh
+            export COSTSPLIT_URI=https://costsplit-456211.oa.r.appspot.com
+            exec /usr/bin/java -jar "costsplit.jar" "$@"
+            EOF
+            chmod +x dist-linux/run.sh
+            tar -czf costsplit-linux.tar.gz -C dist-linux .
+          elif [ "$RUNNER_OS" = "Windows" ]; then
+            mkdir dist-windows
+            cp costsplit*.jar dist-windows/costsplit.jar
+            echo @echo off > dist-windows/run.bat
+            echo set COSTSPLIT_URI=https://costsplit-456211.oa.r.appspot.com >> dist-windows/run.bat
+            echo start javaw -jar "costsplit.jar" %%* >> dist-windows/run.bat
+            powershell Compress-Archive -Path dist-windows -DestinationPath costsplit-windows.zip
+          fi
+        shell: bash
+
+      - name: Upload Platform Package
         uses: softprops/action-gh-release@v2
         with:
-          files: costsplit-linux.tar.gz
+          files: |
+            costsplit-linux.tar.gz
+            costsplit-windows.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Create Windows package with .bat launcher
-        run: |
-          mkdir dist-windows
-          cp target/*.jar dist-windows/costsplit.jar
-          cat > dist-windows/run.bat <<'EOF'
-          @echo off
-          set COSTSPLIT_URI=https://costsplit-456211.oa.r.appspot.com
-          start javaw -jar "costsplit.jar" %%*
-          EOF
-          zip -r costsplit-windows.zip dist-windows
-
-      - name: Upload Windows package to GitHub Release
-        uses: softprops/action-gh-release@v2
-        with:
-          files: costsplit-windows.zip
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        if: startsWith(matrix.os, 'ubuntu') || startsWith(matrix.os, 'windows')
