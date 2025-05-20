@@ -39,8 +39,8 @@ public class MainApp extends Application {
         stage.show();
         try {
         	apiClient=new ApiClient();
-        	apiClient.setHost(Objects.requireNonNullElse(System.getenv("COSTSPLIT_HOST"), "localhost"));
-        	apiClient.setPort(Integer.parseInt(Objects.requireNonNullElse(System.getenv("COSTSPLIT_PORT"), "8080")));
+            String uri=System.getenv("COSTSPLIT_URI");
+            apiClient.updateBaseUri(Objects.requireNonNullElse(uri, "http://localhost:8080"));
 	        api = new DefaultApi(apiClient);
         }catch(Exception e) {
         	e.printStackTrace();
