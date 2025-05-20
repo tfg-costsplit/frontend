@@ -34,7 +34,7 @@ jobs:
           cat > dist-linux/run.sh <<'EOF'
           #!/bin/sh
           export COSTSPLIT_URI=https://costsplit-456211.oa.r.appspot.com
-          /usr/bin/exec /usr/bin/java -jar "costsplit.jar" "$@"
+          exec /usr/bin/java -jar "costsplit.jar" "$@"
           EOF
           chmod +x dist-linux/run.sh
           tar -czf costsplit-linux.tar.gz -C dist-linux .
