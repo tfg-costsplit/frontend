@@ -36,7 +36,7 @@ jobs:
         run: |
           if [ "$RUNNER_OS" = "Linux" ]; then
             mkdir dist-linux
-            cp costsplit*.jar dist-linux/costsplit.jar
+            cp target/costsplit*.jar dist-linux/costsplit.jar
             cat > dist-linux/run.sh <<'EOF'
           #!/bin/sh
           export COSTSPLIT_URI=https://costsplit-456211.oa.r.appspot.com
@@ -46,7 +46,7 @@ jobs:
             tar -czf costsplit-linux.tar.gz -C dist-linux .
           elif [ "$RUNNER_OS" = "Windows" ]; then
             mkdir dist-windows
-            cp costsplit*.jar dist-windows/costsplit.jar
+            cp target/costsplit*.jar dist-windows/costsplit.jar
             echo @echo off > dist-windows/run.bat
             echo set COSTSPLIT_URI=https://costsplit-456211.oa.r.appspot.com >> dist-windows/run.bat
             echo start javaw -jar "costsplit.jar" %%* >> dist-windows/run.bat
