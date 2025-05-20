@@ -58,10 +58,10 @@ jobs:
             mkdir dist-linux
             cp costsplit*.jar dist-linux/costsplit.jar
             cat > dist-linux/run.sh <<'EOF'
-            #!/bin/sh
-            export COSTSPLIT_URI=https://costsplit-456211.oa.r.appspot.com
-            exec /usr/bin/java -jar "costsplit.jar" "$@"
-            EOF
+          #!/bin/sh
+          export COSTSPLIT_URI=https://costsplit-456211.oa.r.appspot.com
+          exec /usr/bin/java -jar "costsplit.jar" "$@"
+          EOF
             chmod +x dist-linux/run.sh
             tar -czf costsplit-linux.tar.gz -C dist-linux .
           elif [ "$RUNNER_OS" = "Windows" ]; then
