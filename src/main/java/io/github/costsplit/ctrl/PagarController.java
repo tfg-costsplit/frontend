@@ -174,6 +174,8 @@ public class PagarController {
         	cmbPagosARealizar.getSelectionModel().select(0);
         	cantidadTotal=cmbPagosARealizar.getSelectionModel().getSelectedItem().getCantidad();
         	actualizarCantidad();
+        }else {
+        	btnPagar.setDisable(true);
         }
     }
     

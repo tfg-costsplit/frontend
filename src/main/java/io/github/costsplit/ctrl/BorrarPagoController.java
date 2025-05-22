@@ -44,7 +44,6 @@ public class BorrarPagoController {
 				al.setAlertType(AlertType.ERROR);
 				al.setContentText("Error al borrar el pago");
 				al.showAndWait();
-				e.printStackTrace();
 			}
     	}
     }

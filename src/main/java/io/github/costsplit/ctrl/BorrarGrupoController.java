@@ -46,12 +46,13 @@ public class BorrarGrupoController {
     	if(resp.get()==ButtonType.OK) {
     		try {
 				MainApp.getApi().deleteGroup(cmbGrupos.getSelectionModel().getSelectedItem().getId());
+				Integer id=cmbGrupos.getSelectionModel().getSelectedItem().getId();
+				IniciarSesionController.getToken().getGroups().remove(id);
 				Navegador.cargarVista("PestaniaPrincipal", null);
 			} catch (ApiException e) {
 				al.setAlertType(AlertType.ERROR);
 				al.setContentText("Error al borrar el grupo");
 				al.showAndWait();
-				e.printStackTrace();
 			}
     	}
     }
