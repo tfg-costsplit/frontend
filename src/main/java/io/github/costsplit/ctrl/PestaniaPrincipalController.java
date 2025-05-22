@@ -45,6 +45,27 @@ public class PestaniaPrincipalController {
     	}
     
     /**
+     * Borrar grupo.
+     *
+     * @param event the event
+     */
+    @FXML
+    void borrarGrupo(ActionEvent event) {
+    	Navegador.cargarVista("BorrarGrupo", null);
+    }
+    
+
+    /**
+     * Borrar pago.
+     *
+     * @param event the event
+     */
+    @FXML
+    void borrarPago(ActionEvent event) {
+    	Navegador.cargarVista("BorrarPago", null);   
+    }
+    
+    /**
      * Pagar.
      *
      * @param event the event
@@ -82,6 +103,7 @@ public class PestaniaPrincipalController {
      */
     @FXML
     public void initialize() {
+    	//Cargar la lista
     	List<Integer> grupos=IniciarSesionController.getToken().getGroups();
     	for(Integer i:grupos) {
     		try {
@@ -91,9 +113,11 @@ public class PestaniaPrincipalController {
 						if(Integer.parseInt(entry.getKey())==IniciarSesionController.getToken().getId()&&
 								datosCompra.getPayments().get(entry.getKey()).getShouldPay()-
 								datosCompra.getPayments().get(entry.getKey()).getPaid()!=0) {
+							//añadir a la lista el gasto
 							lstGastos.getItems().add(new ModeloPago(entry.getKey(),datosCompra.getDescription(),
-									((double)(entry.getValue().getShouldPay()-entry.getValue().getPaid()))/100));
+								((double)(entry.getValue().getShouldPay()-entry.getValue().getPaid()))/100));
 						}
+						
 					}
 				}
 			} catch (ApiException e) {
