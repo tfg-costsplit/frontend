@@ -44,9 +44,15 @@ public class BorrarGrupoController {
     			+ "Esta opcion no se puede deshacer");
     	Optional<ButtonType> resp=al.showAndWait();
     	if(resp.get()==ButtonType.OK) {
-    		//TODO cambiar el print por la funcion de borrar
-    		System.out.println("BORRADO");
-    		Navegador.cargarVista("PestaniaPrincipal", null);
+    		try {
+				MainApp.getApi().deleteGroup(cmbGrupos.getSelectionModel().getSelectedItem().getId());
+				Navegador.cargarVista("PestaniaPrincipal", null);
+			} catch (ApiException e) {
+				al.setAlertType(AlertType.ERROR);
+				al.setContentText("Error al borrar el grupo");
+				al.showAndWait();
+				e.printStackTrace();
+			}
     	}
     }
 

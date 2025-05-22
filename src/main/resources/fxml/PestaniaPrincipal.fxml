@@ -17,7 +17,7 @@
             <items>
               <MenuItem mnemonicParsing="false" onAction="#aniadirCompra" text="Añadir compra" />
                   <MenuItem mnemonicParsing="false" onAction="#pagar" text="Pagar pendiente" />
-                  <MenuItem mnemonicParsing="false" onAction="#borrarPago" text="Borrar pago" />
+                  <MenuItem mnemonicParsing="false" onAction="#borrarPago" text="Borrar compra" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Grupo">

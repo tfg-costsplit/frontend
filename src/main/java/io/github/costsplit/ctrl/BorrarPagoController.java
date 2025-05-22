@@ -33,14 +33,19 @@ public class BorrarPagoController {
     void accionBorrar(ActionEvent event) {
     	Alert al=new Alert(AlertType.CONFIRMATION);
     	al.setHeaderText(null);
-    	al.setContentText("¿Estás seguro de que deseas elimar el pago \""+cmbPagos.getSelectionModel().getSelectedItem()+"\"?\n"
+    	al.setContentText("¿Estás seguro de que deseas elimar la compra \""+cmbPagos.getSelectionModel().getSelectedItem()+"\"?\n"
     			+ "Esta opcion no se puede deshacer");
     	Optional<ButtonType> resp=al.showAndWait();
     	if(resp.get()==ButtonType.OK) {
-    		//TODO cambiar el print por la funcion de borrar
-    		MainApp.getApi().deletePurchase(cmbPagos.getSelectionModel().getSelectedItem().getId());
-    		System.out.println("BORRADO");
-    		Navegador.cargarVista("PestaniaPrincipal", null);
+    		try {
+				MainApp.getApi().deletePurchase(cmbPagos.getSelectionModel().getSelectedItem().getId());
+				Navegador.cargarVista("PestaniaPrincipal", null);
+			} catch (ApiException e) {
+				al.setAlertType(AlertType.ERROR);
+				al.setContentText("Error al borrar el pago");
+				al.showAndWait();
+				e.printStackTrace();
+			}
     	}
     }
 
